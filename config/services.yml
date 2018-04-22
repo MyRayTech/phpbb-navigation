@@ -1,0 +1,27 @@
+services:
+    raytech.navigation.listener:
+        class: raytech\navigation\event\listener
+        arguments:
+            - @ext.manager
+            - @path_helper
+            - @controller.helper
+            - @template
+            - @raytech.navigation.controller
+        tags:
+            - { name: event.listener }
+    raytech.navigation.controller:
+        class: raytech\navigation\controller\main
+        arguments:
+            - @ext.manager
+            - @user
+            - @controller.helper
+            - @path_helper
+            - @template
+            - @service_container
+            - @raytech.navigation.operator
+            
+    raytech.navigation.operator:
+        class: raytech\navigation\operator\navigation
+        arguments:
+            - @dbal.conn
+            - %core.table_prefix%

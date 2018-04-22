@@ -1,0 +1,11 @@
+<!-- INCLUDEJS @raytech_navigation/js/hoverIntent.js -->
+<!-- INCLUDEJS @raytech_navigation/js/superfish.min.js -->
+<script>
+	$(document).ready(function() {
+		$('.sf-menu').superfish([
+			cssArrows: false
+		]);
+		$('.rightside li.top-element:first-child').addClass('no-bg');
+		$('.leftside li.top-element:last-child').addClass('no-bg');
+	});
+</script>
